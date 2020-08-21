@@ -1,11 +1,13 @@
-import React, {Component}  from 'react';
+import React from 'react';
 
 
-class  Cell extends Component {
-
-render(){
-  return();
-  }
-
+export default function Cell (props){
+  return (
+          <button  className="col-4 square" onClick ={props.onClick}>
+                   {props.value}
+          </button>
+  ) 
 }
-export default Cell;
+
+
+
