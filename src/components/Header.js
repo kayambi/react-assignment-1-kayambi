@@ -1,23 +1,30 @@
 import React, {Component} from 'react';
-
+// import { import } from '@babel/types';
+import logo from '../images/logo.png';  // import logo main header
+import '../index.css';
+import Info from './Info';
 
 class Header extends Component {
 // const Header = (props) => {
   runFunc =() =>{
-    this.setState=({
-      open:true
-    })
+    this.setState=()=> {
+     return <h1>try</h1>
+    }
   }
   render(){
   return( 
     // Fragment eleminate the need to  wrapp every component into div
     <React.Fragment> 
         <div className="main-header">
-            <h1>TicTocToe 
-              <button class="button" onClick ={this.runFunc}>Start</button> 
-            </h1>
-           
+        {/* render logo main header */}
+        <img src={logo} alt="Logo" />
+        {/* main header */}
+            <h1>TICTOCTOE</h1> 
+        {/* button  start */}
+            <button onClick ={this.runFunc}>Start</button>     
         </div>
+        <Info/>
+      
      </React.Fragment>
   );
   }
