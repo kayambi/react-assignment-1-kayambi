@@ -1,7 +1,5 @@
 import React, {Component} from 'react';
-// import Info from './Info';
 import Header from './Header';
-// import './index.css';
 import Game from './Game';
 
  class App extends Component {
@@ -13,15 +11,12 @@ import Game from './Game';
                  <p>Another Name {this.props.name}</p> */}
                  {/* Calling Game Components */}
                  <Game/>  
-                 {/* Calling Info Component */}
-                 {/* <Info/> */}
                  {/* Calling Header Component */}
                  <Header/>
-.            </div>
+             </div>
             </React.Fragment>
             );
           }
-
         }
   
  export default App;
