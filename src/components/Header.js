@@ -8,7 +8,7 @@ class Header extends Component {
 // const Header = (props) => {
   runFunc =() =>{
     this.setState=()=> {
-     return <h1>try</h1>
+     return <Info/>
     }
   }
   render(){
@@ -19,11 +19,13 @@ class Header extends Component {
         {/* render logo main header */}
         <img src={logo} alt="Logo" />
         {/* main header */}
-            <h1>TICTOCTOE</h1> 
+            <div>
+                 <h1>TICTOCTOE</h1>
+            </div>
         {/* button  start */}
             <button onClick ={this.runFunc}>Start</button>     
         </div>
-        <Info/>
+        {/* <Info/> */}
       
      </React.Fragment>
   );

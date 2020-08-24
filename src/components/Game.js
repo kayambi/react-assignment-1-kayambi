@@ -1,51 +1,77 @@
 import React, {Component}  from 'react';
 import Board from './Board'; 
+// import Header from './Header';
 
 
-export default class  Game extends Component {
-    // Set intial constructor 
-    constructor(props){
-        super(props) 
-        console.log(props);
-        this.state ={
-            
-            xisTheNext:true, // set x as a flag the determine if it X or O time to go
-            stepNum: 0, // default value of some number is 0, since  there is not steps at thebegining
-            history:[
-                {squares:Array(9).fill(null)} // set each item to null because none is playing at the begining
-
-            ]  //saves the history of the steps in the game
-        }
+export default class  Game extends Component { 
+// adding a constructor to  the Game  initial state to contain an array
+  constructor (props){
+    super(props)
+    this.state = { 
+      history:[{
+        squares:Array(9).fill(null),
+      }],
+      xIsNext:true,
     }
-    // Create a handle click function that will change the status of each cell every
-    // time the user clicks on  it.
-
-handleClick(i){
-    const history =this.state.history.slice(0,this.state.stepNum +1);
+  }
+  handleClick(i){
+    const history  = this.state.history;
     const current =history[history.length-1];
-    const squares = current.squares.slice();
-          squares[i] = this.state.xisTheNext ? "X":"O";
-          this.setState ({
-              history:history.concat({
-                  squares:squares
+    
+// Showing the past moves 
 
-              }),
-              xisTheNext:!this.state.xisTheNext,
-              stepNum : history.lenght
-          })
+const winner
+   
+    //  create a copy of the squares to be modified instead of modifying the original
+    // using slice() method and the take the turns between two players 
+    const squares = current.squares.slice()
+
+    // once there is a winner the game must be stoped
+    if (determineTheWinner(squares) || squares[i]){
+            return;
+    }
+           squares[i] = this.state.xisNext ? "X": "O";
+    //        Save new outcome of squares clicked  to the existing squares data
+           this.setState ({ 
+               history:history.concat([{
+               squares:squares,
+               }]),
+               xisNext:!this.state.xisNext,
+    });
 }
-render(){
-    const history =this.state.history;
-    const current = history[this.state.stepNum];
 
-  return(
-    <div className="game">
-    <div className="game-board">
-          <Board onClick={(i)=> this.onClick(i)}
-            squares ={current.squares}
-          />
-     </div> 
-    </div> 
-  );
+render(){ 
+
+const history = this.state.history;
+const current =history[history.length -1];
+const winner = determineTheWinner(current.squares) 
+const moves = history.map(step,move)=>{
+        const desc =move ? 'go to move # ' + move : 'go to game start '
+}
+  let status;
+  if (winner) {
+          status = "winner is :" + winner; 
+
+  }else {
+          status ="Next player is " + (this.state.xisNext ? "X":"O") ;
+  }
+
+  return( 
+        <div className="game">
+        <div className="game-board">
+            <Board  
+            squares={current.squares}
+            OnClick ={(i) => this.handleClick(i)}  
+            />
+
+         </div>
+         <div className="game-info"> 
+         <div>{status}</div>
+         <ol>
+           {/* {Todo} */}
+         </ol>
+         </div>
+         </div>
+         );
   }
 }

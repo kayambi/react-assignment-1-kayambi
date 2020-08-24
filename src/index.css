@@ -34,10 +34,11 @@ code {
 }
 
 .square{
-  margin: 1%;
-  padding: 0;
-  width: 70px;
-  height: 70px;
+  margin: 0%;
+  width: 80px;
+  height: 80px;
+  background:burlywood;
+  border: 2px solid green;
 }
 
 .squareIcon{
@@ -49,7 +50,7 @@ code {
 
 .cell{
   color: white;
-  background: black;
+  background:green;
   margin: 0;
   padding: 0;
 }
@@ -81,29 +82,6 @@ flex-wrap: nowrap;
 }
 
 /* MY Style CSS */
-.square{
-  background: green;
-  border: 2px solid green;
-  /* float: left; */
-  margin-right:0px;
-  margin-top: 0px;
-  /* padding:1; */
-  width: 80px;
-  height:80px;
-  text-align:center;
-  font-size:40px;
-  font-weight: bold;
-
-}
-.square:focus {
-  outline: none;
-}
-/* Board */ 
-.border-row:after {
-  clear: both;
-  content:"";
-  display: table;
-}
 /* game */
 .game {
   position: absolute;
@@ -147,4 +125,13 @@ img {
   height: 200px;
 
 }
+
+.img1{
+  height: 10px;
+}
+
+.TitleGame{
+  font-family: 'Titillium Web', sans-serif
+}
+
 /* Names first and second player */ 
