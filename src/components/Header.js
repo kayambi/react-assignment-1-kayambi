@@ -2,15 +2,17 @@ import React, {Component} from 'react';
 // import { import } from '@babel/types';
 import logo from '../images/logo.png';  // import logo main header
 import '../index.css';
-import Info from './Info';
+
 
 class Header extends Component {
-// const Header = (props) => {
-  runFunc =() =>{
-    this.setState=()=> {
-     return <Info/>
+   
+    constructor(){
+      super();
+      this.handleClick = this.handleClick.bind(this);
     }
-  }
+    handleClick() {
+        console.log("clicke happened")
+    }
   render(){
   return( 
     // Fragment eleminate the need to  wrapp every component into div
@@ -23,7 +25,7 @@ class Header extends Component {
                  <h1>TICTOCTOE</h1>
             </div>
         {/* button  start */}
-            <button onClick ={this.runFunc}>Start</button>     
+            <button onClick = {this.handleClick}>Start</button>     
         </div>
         {/* <Info/> */}
       
