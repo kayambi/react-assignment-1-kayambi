@@ -133,5 +133,6 @@ img {
 .TitleGame{
   font-family: 'Titillium Web', sans-serif
 }
-
-/* Names first and second player */ 
+.status{
+  padding: 0%;
+}
