@@ -127,7 +127,7 @@ img {
 }
 
 .img1{
-  height: 10px;
+  height: 20px;
 }
 
 .TitleGame{
@@ -135,4 +135,29 @@ img {
 }
 .status{
   padding: 0%;
+} 
+
+
+.NameX { 
+
+  font-family:"architects Daughter", cursive
+ 
+}
+.NameO{
+  font-family:"architects Daughter", cursive
+}
+.G { 
+  /* font-family:"architects Daughter", cursive */
+  margin-left: .1em;   /* 4px*/
+
+}
+
+.ResetGame {
+  /* font-family:"architects Daughter", cursive */
+  float: right;
+  width: 10%;
+
+ 
+
+
 }
