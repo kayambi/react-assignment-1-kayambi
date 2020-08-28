@@ -20,7 +20,6 @@ export default class  Game extends Component {
                   
                       </div>
                       <div className="col-sm-6">
-
                         {/* <Header handleSubmit={fields => this.handleSubmit(fields)} />
                         <p>{JSON.stringify(this.state.fields)}</p> */}
 
@@ -37,27 +36,6 @@ export default class  Game extends Component {
                         <Board/>
                         </div> 
                         </article>
-                        {/* <nav>
-                        
-                        </nav>
-                        <hr/>
-                        <hr/>
-                        <hr/>
-                
-                        <aside> 
-                          <div className="row ">
-                          <div>
-                          <button className="col-sm-12">Reset</button>
-                          </div>
-                          <hr/>
-                          <hr/>
-                          <div>
-                          <button className="col-sm-12">Game</button>
-
-                          </div>
-                    
-                          </div>
-                        </aside> */}
                     </main>
                       </div>
                       </div>
