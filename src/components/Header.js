@@ -1,59 +1,77 @@
 import React, {Component} from 'react';
-// import { import } from '@babel/types';
+
 import logo from '../images/logo.png'; 
 //  import logo main header
 import '../index.css';
 import logox from '../images/1.png'; 
 import logoO from '../images/0.png'; 
+import Game from './Game';
 // import Board from './Board';
 export default class Header extends Component {
   constructor(){
     super();
-    this.state ={NameX:"", NameO:""
+    this.state ={
+         NameX:" ", 
+         NameO:" ",
+         open:false
     }
-  this.handleChange = this.handleChange.bind(this);
+  this.PlayersNameChange = this.PlayersNameChange.bind(this);
   this.handleSubmit = this.handleSubmit.bind(this);
+  this.HideBtn = this.HideBtn.bind(this)
   }
 
-  handleChange =({target})=>{
-    this.setState({[target.name]: target.value})
+  PlayersNameChange =({target})=>{  
+    this.setState({
+      [target.name]:target.value})
 
   }
+
+  HideBtn() {
+    this.setState({
+      open: !this.state.open
+    });
+  }
+  
   // Use a react hook to get aour updated data to the DOM 
   handleSubmit =(event)=>{ 
-    console.log("the first player's Name is:" + this.state.NameX)
-  console.log("the second player's Name is:" + this.state.NameO)
     event.preventDefault();
+    this.props.handleSubmit(this.state)
+    console.log(this.state.NameX);
+    console.log(this.state.NameO);
   };
-   showForm =()=> {
+    // HideBtn(){
+    //     this.setState({
+    //       open: !this.state.open
+    //     });
+    //   }
+
+    // }
+   showForm = ()=> {
      return (
        <div>
          <form onSubmit = {this.handleSubmit}>
            <div className="form-row">
-           <div className="col">
+           <div className="col-md-6">
            <label>Name  <img className="img1" src={logox} alt="Logo"/></label>
-           <input type="text"  name="NameX" value={this.state.NameX} onChange={this.handleChange}></input>
+           <input type="text"  name="NameX" onChange={this.PlayersNameChange}></input>
            </div>
        
-          <div className="col">
+          <div className="col-md-6">
           <label>Name <img className="img1" src={logoO} alt="Logo"/></label>
-           <input type="text" name="NameO"  value={this.state.NameO} onChange={this.handleChange}></input>
+           <input type="text" name="NameO"  onChange={this.PlayersNameChange}></input>
            </div>
-           <div>
-             <hr/>
-          <label> 
-          {/* <button type="submit" value="Start Gane"></button> */}
-      
-             <button className="btn btn-success"  >Start Game</button>
-            {/* {this.state.showForm ? this.showForm(): null }      */}
     
+          </div> 
+          <div className="row button-row">
+          <label> 
+             <button className="btn btn-success start-button">Start Game</button>
           </label>
           </div>
-          </div> 
          </form>
        </div>
      )
-    }
+     }
+    
   render(){
   return( 
     // Fragment eleminate the need to  wrapp every component into div
@@ -65,15 +83,14 @@ export default class Header extends Component {
             <div>
                  <h1>TICTOCTOE</h1>
             </div>
-            
-        {/* button  start */}
-        <div className="mx-auto">
-        <button className="btn btn-secondary" onClick ={ () => this.setState({showForm: true})}>Start</button>
-            {this.state.showForm ? this.showForm(): null }     
-            {/* Buttons to start the game */}
+        <div className="mx-auto main-button">
+        <button className="btn btn-secondary"  onClick = {() => this.setState({showForm: true}, this.HideBtn.bind(this))}>Start</button>
+            {this.state.showForm ? this.showForm(): null }
+
+
          </div>
-        </div>
-        {/* <Info/> */}
+        </div> 
+        {/* <Game/> */}
      </React.Fragment>
   );
   }

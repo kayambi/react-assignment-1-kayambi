@@ -1,20 +1,29 @@
 import React, {Component} from 'react';
-// import Game from './Game';
 import Header from './Header';
-// import Info from './Info';
 import Game from './Game';
 
 
  class App extends Component {
+   state ={
+     fields:{}
+   }
+   handleSubmit = (fields)=>{
+     this.setState({
+           fields
+   })
+   
+     console.log("App got :", fields )
+
+   }
+
        render() {
           return (
             <React.Fragment>
             <div className="info">
-                 <Header/>
-                 
-                 {/* <Info/> */}
-               
-                 {/* <Info/> */}
+                <Game/>
+                 {/* <Header
+                handleSubmit={fields => this.handleSubmit(fields)}/> 
+                <p>{JSON.stringify(this.state.fields)}</p> */}
              </div>
             </React.Fragment>
             );

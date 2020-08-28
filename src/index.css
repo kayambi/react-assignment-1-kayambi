@@ -98,7 +98,7 @@ flex-wrap: nowrap;
   top:50%;
   left: 50%;
   transform: translate(-50% , -50%);
-  display: flex;
+
   flex-direction: row;
   margin: 0 auto;
 }
@@ -146,18 +146,19 @@ img {
 .NameO{
   font-family:"architects Daughter", cursive
 }
-.G { 
-  /* font-family:"architects Daughter", cursive */
-  margin-left: .1em;   /* 4px*/
 
+.button-row
+{
+  justify-content: center;
+  padding-top: 15px;
 }
 
-.ResetGame {
-  /* font-family:"architects Daughter", cursive */
-  float: right;
-  width: 10%;
+.main-header
+{
+  text-align: center;
+}
 
- 
-
-
+.main-button
+{
+  margin-bottom: 15px;
 }
