@@ -20,8 +20,8 @@ import Game from './Game';
           return (
             <React.Fragment>
             <div className="info">
-                <Game/>
-                 {/* <Header
+         
+                 <Header
                 handleSubmit={fields => this.handleSubmit(fields)}/> 
                 <p>{JSON.stringify(this.state.fields)}</p> */}
              </div>

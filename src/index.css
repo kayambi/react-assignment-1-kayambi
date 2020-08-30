@@ -162,3 +162,18 @@ img {
 {
   margin-bottom: 15px;
 }
+.TicToc {
+  color:black;
+  justify-content: space-between;
+  display: inline-block;
+  text-decoration-style: unset;
+  font-family:"Architects Daughter",cursive;
+
+
+}
+.TicHeader{
+ display:inline-block
+}
+.start{
+  font-family:"Architects Daughter",cursive;
+}

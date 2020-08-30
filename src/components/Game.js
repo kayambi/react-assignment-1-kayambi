@@ -10,23 +10,26 @@ export default class  Game extends Component {
             return( 
               <React.Fragment> 
                 {/* Name of the players */}
-                   <div className="row">
-                      <div className="col-sm-6">
-
+           
                      {/* <Header handleSubmit={fields => this.handleSubmit(fields)} />
                     <p>{JSON.stringify(this.state.fields)}</p> */}
 
-                      <p className="NameX">X</p>
                   
-                      </div>
-                      <div className="col-sm-6">
+
                         {/* <Header handleSubmit={fields => this.handleSubmit(fields)} />
                         <p>{JSON.stringify(this.state.fields)}</p> */}
+    
 
-                        <p className="Name0">0</p>
-
-                        </div>
-                      </div>
+                      {/* start here */} 
+                      <div className="d-flex bd-highlight mb-3 ">
+                          <div className="mr-auto p-2 bd-highlight">
+                               <p>player1</p>
+                          </div>
+                          <div className="p-2 bd-highlight"> 
+                          <p>Player2</p>
+                          </div>
+                       </div>  
+                      {/* end here */}
                       <div className="row">
                       <div className="col-sm-6">
                           {/* Board of the Game  */}
@@ -39,16 +42,15 @@ export default class  Game extends Component {
                     </main>
                       </div>
                       </div>
-                      <div className="row">
-                        <div className="col-md-6">
-                          <button>New Game</button>
-                        </div>
-                        <div className="col-md-6">
-                          <button>Reset</button>
-                        </div>
-                      </div>
-            
-          
+                      <hr/>
+                      <div className="d-flex bd-highlight mb-3 ">
+                          <div className=" mr-auto p-2 bd-highlight order-0">
+                               <button>New Game</button>
+                          </div>
+                          <div className="p-2 bd-highlight "> 
+                                 <button>Reset</button>
+                          </div>
+                       </div>    
               </React.Fragment>  
                   );
   }
